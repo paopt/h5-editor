@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <router-view></router-view>
+  h5编辑器
 </template>
 
 <style scoped>

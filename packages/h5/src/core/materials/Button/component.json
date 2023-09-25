@@ -1,0 +1,14 @@
+{
+  "name": "按钮",
+  "type": "button",
+  "icon": "",
+  "children": [],
+  "data": {},
+  "styles": {
+    "position": {
+      "label": "位置"
+    }
+  },
+  "events": {},
+  "animates": {}
+}

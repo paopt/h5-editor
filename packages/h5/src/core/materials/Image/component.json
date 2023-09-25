@@ -1,0 +1,10 @@
+{
+  "name": "按钮",
+  "type": "button",
+  "icon": "",
+  "children": [],
+  "data": {},
+  "styles": {},
+  "events": {},
+  "animates": {}
+}

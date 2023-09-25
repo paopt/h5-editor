@@ -11,6 +11,10 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    "vue/multi-word-component-names": false
+    sourceType: 'module',
+    parser: '@typescript-eslint/parser'
+  },
+  rules: {
+    'vue/multi-word-component-names': 'off'
   }
 }
