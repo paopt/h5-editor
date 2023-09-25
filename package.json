@@ -1,0 +1,32 @@
+{
+  "name": "h5-editor",
+  "version": "1.0.0",
+  "description": "h5页面搭建平台",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "bootstrap": "yarn && node scripts/install.js",
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paopt/h5-editor.git"
+  },
+  "keywords": [
+    "h5",
+    "编辑器",
+    "可视化"
+  ],
+  "author": "paopt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paopt/h5-editor/issues"
+  },
+  "homepage": "https://github.com/paopt/h5-editor#readme",
+  "devDependencies": {
+    "execa": "^8.0.1",
+    "inquirer": "^9.2.11",
+    "ora": "^7.0.1"
+  }
+}

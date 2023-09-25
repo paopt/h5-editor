@@ -1,0 +1,9 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "h5编辑器后端服务",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./index.js"
+  }
+}
