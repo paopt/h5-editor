@@ -1,14 +1,38 @@
 {
   "name": "按钮",
   "type": "button",
-  "icon": "",
+  "icon": "icon-anniu",
+  "component": "MButton",
   "children": [],
   "data": {},
   "styles": {
     "position": {
-      "label": "位置"
+      "label": "位置",
+      "type": "array",
+      "children": [
+        {
+          "label": "x",
+          "type": "number",
+          "value": 100
+        },
+        {
+          "label": "y",
+          "type": "number",
+          "value": 100
+        }
+      ]
+    },
+    "size": {
+      
+    }
+  },
+  "attrs": {
+    "label": {
+      "label": "文本",
+      "type": "string",
+      "value": "按钮"
     }
   },
   "events": {},
-  "animates": {}
+  "animations": {}
 }

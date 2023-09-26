@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  h5编辑器
+  按钮
 </template>
 
 <style scoped>

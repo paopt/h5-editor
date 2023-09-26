@@ -2,7 +2,7 @@
 
 <template>
   <div class="">
-
+画布
   </div>
 </template>
 

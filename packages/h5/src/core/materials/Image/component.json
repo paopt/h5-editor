@@ -1,7 +1,8 @@
 {
-  "name": "按钮",
-  "type": "button",
-  "icon": "",
+  "name": "图片",
+  "type": "image",
+  "icon": "icon-tuxiang",
+  "component": "MImage",
   "children": [],
   "data": {},
   "styles": {},

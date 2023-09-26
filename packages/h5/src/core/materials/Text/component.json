@@ -1,7 +1,8 @@
 {
-  "name": "按钮",
-  "type": "button",
-  "icon": "",
+  "name": "文本",
+  "type": "text",
+  "icon": "icon-wenben",
+  "component": "MText",
   "children": [],
   "data": {},
   "styles": {},
