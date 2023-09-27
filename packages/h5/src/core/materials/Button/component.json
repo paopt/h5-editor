@@ -2,28 +2,71 @@
   "name": "按钮",
   "type": "button",
   "icon": "icon-anniu",
-  "component": "MButton",
   "children": [],
-  "data": {},
   "styles": {
     "position": {
       "label": "位置",
-      "type": "array",
-      "children": [
-        {
-          "label": "x",
+      "type": "object",
+      "children": {
+        "left": {
+          "label": "x轴",
           "type": "number",
           "value": 100
         },
-        {
-          "label": "y",
+        "top": {
+          "label": "y轴",
           "type": "number",
           "value": 100
         }
-      ]
+      }
     },
     "size": {
-      
+      "label": "尺寸",
+      "type": "object",
+      "children": {
+        "width": {
+          "label": "宽度",
+          "type": "number",
+          "value": 100
+        },
+        "height": {
+          "label": "高度",
+          "type": "number",
+          "value": 100
+        }
+      }
+    },
+    "padding": {
+      "label": "间距",
+      "type": "object",
+      "children": {
+        "paddingTop": {
+          "label": "上间距",
+          "type": "number",
+          "value": 0
+        }
+      }
+    },
+    "backgroundColor": {
+      "label": "背景色",
+      "type": "color",
+      "value": "#ffffff"
+    },
+    "backgroundImage": {
+      "label": "背景图",
+      "type": "object",
+      "children": {
+        "url": {
+          "label": "链接",
+          "type": "string",
+          "value": ""
+        },
+        "upload": {
+          "label": "拖拽上传",
+          "type": "upload",
+          "value": ""
+        }
+      }
     }
   },
   "attrs": {
@@ -33,6 +76,7 @@
       "value": "按钮"
     }
   },
+  "data": {},
   "events": {},
   "animations": {}
 }

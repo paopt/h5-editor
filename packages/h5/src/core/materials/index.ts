@@ -1,19 +1,16 @@
 import { type App } from 'vue'
+import type { IMaterialSchema } from '../type';
 
-export interface IMaterial {
-  name: string;
-  type: string;
-  component: string;
-  icon: string;
-  children: IMaterial[];
-  data: any;
-  styles: any;
-  events: any;
-  animates: any;
-  [propName: string]: any;
+const materials: IMaterialSchema[] = [];
+
+/**
+ * 根据组件类型获取组件名称
+ * @param type 组件类型
+ * @returns 
+ */
+export function getComponentName(type: string) {
+  return `M${type}`
 }
-
-const materials: IMaterial[] = []
 
 /**
  * 获取物料列表
@@ -28,10 +25,10 @@ export function getMaterials() {
 function initMaterials() {
   const files = import.meta.glob('./**/*.json', { eager: true});
   Object.keys(files).forEach(key => {
-    materials.push({...files[key] as any} as IMaterial)
+    const data = (files[key] as any).default;
+    materials.push(data)
   });
 }
-
 
 /**
  * 注册物料组件为全局组件
@@ -43,7 +40,7 @@ export const registerMaterials = {
     const files = import.meta.glob('./**/*.vue', { eager: true })
     Object.keys(files).forEach(key => {
       const name = key.split('/')[1]
-      app.component(`M${name}`, files[key] as any)
+      app.component(`${getComponentName(name)}`, files[key] as any)
     })
   }
 }

@@ -1,8 +1,38 @@
 <script setup lang="ts">
+import { v4 as uuidv4 } from 'uuid';
 import CanvasPanel from '@/components/CanvasPanel.vue';
 import LayerPanel from '@/components/LayerPanel.vue';
 import MaterialPanel from '@/components/MaterialPanel.vue';
 import SettingPanel from '@/components/SettingPanel.vue';
+import type { IPage } from '@/core/type';
+import { setPage } from '@/services/material'
+
+let page: IPage;
+
+init();
+
+/**
+ * 组件初始化
+ */
+function init() {
+  getPageData();
+}
+
+/**
+ * 获取页面数据
+ */
+function getPageData() {
+  page = {
+    id: uuidv4(),
+    name: 'h5',
+    materials: [],
+    styles: {}
+  };
+
+  // 保存页面数据（全局）
+  setPage(page)
+  console.log('Editor 保存page：', page)
+}
 </script>
 
 <template>

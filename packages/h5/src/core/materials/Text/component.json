@@ -2,10 +2,43 @@
   "name": "文本",
   "type": "text",
   "icon": "icon-wenben",
-  "component": "MText",
   "children": [],
+  "styles": {
+    "position": {
+      "label": "位置",
+      "type": "object",
+      "children": {
+        "left": {
+          "label": "x轴",
+          "type": "number",
+          "value": 100
+        },
+        "top": {
+          "label": "y轴",
+          "type": "number",
+          "value": 100
+        }
+      }
+    },
+    "size": {
+      "label": "尺寸",
+      "type": "object",
+      "children": {
+        "width": {
+          "label": "宽度",
+          "type": "number",
+          "value": 100
+        },
+        "height": {
+          "label": "高度",
+          "type": "number",
+          "value": 100
+        }
+      }
+    }
+  },
+  "attrs": {},
   "data": {},
-  "styles": {},
   "events": {},
   "animates": {}
 }
