@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getMaterials } from '@/core/materials';
 import type { IMaterialSchema } from '@/core/type';
-import { addMaterial } from '@/services/material'
+import { addMaterial, setDragData } from '@/services/material'
 
 let materials: IMaterialSchema[];
 
@@ -30,6 +30,7 @@ function handleClick(material: IMaterialSchema) {
  */
 function handleDragstart(data: IMaterialSchema) {
   console.log('拖拽物料开始：', data);
+  setDragData(data);
 }
 
 </script>

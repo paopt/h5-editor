@@ -1,11 +1,13 @@
-import { ref, type Ref } from 'vue';
+import { getCurrentInstance, ref, type Ref } from 'vue';
 import type { IMaterialInstance, IMaterialSchema, IPage, IProperty } from "@/core/type";
 import { v4 as uuidv4 } from 'uuid';
 
 export const page: Ref<IPage> = ref(null);
 
 // 拖拽物料
-let dragMaterial: IMaterialSchema;
+export const dragMaterial: IMaterialSchema = ref(null);
+// 当前选中物料
+export const currentMaterial: IMaterialInstance = ref(null);
 
 /**
  * 保存页面数据
@@ -15,14 +17,32 @@ export function setPage(data: IPage) {
   page.value = data;
 }
 
+export function getPageData() {
+  return page.value;
+}
+
 /**
  * 添加物料
  */
 export function addMaterial(data: IMaterialSchema) {
   const instance = getMaterialInstance(data);
   page.value.materials.push(instance);
+  setCurrentMaterial(instance)
+}
 
-  console.log(page.value)
+/**
+ * 删除物料
+ * @param data 
+ */
+export function deleteMaterial(data: IMaterialInstance) {
+  const index = page.value.materials.findIndex(material => material.id === data.id);
+  page.value.materials.splice(index, 1);
+}
+
+export function copyMaterial(data: IMaterialInstance) {
+  const instance: IMaterialInstance = JSON.parse(JSON.stringify(data));
+  instance.id = uuidv4();
+  page.value.materials.push(instance);
 }
 
 /**
@@ -60,4 +80,28 @@ function getValue(data: IProperty, result: any) {
     }
   });
   return result
+}
+
+/**
+ * 拖拽物料
+ * @param data 
+ */
+export function setDragData(data: IMaterialSchema) {
+  dragMaterial.value = data
+}
+
+export function getDragData() {
+  return dragMaterial.value;
+}
+
+/**
+ * 设置当前选中物料
+ * @param data 
+ */
+export function setCurrentMaterial(data: IMaterialInstance) {
+  currentMaterial.value = data;
+}
+
+export function getCurrentMaterial() {
+  return currentMaterial;
 }
